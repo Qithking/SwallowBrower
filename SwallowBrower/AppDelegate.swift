@@ -17,10 +17,11 @@ class KeyboardTestResponder: NSView {
     }
 }
 
+@MainActor
 class AppDelegate: NSObject, NSApplicationDelegate {
     private nonisolated(unsafe) var window: NSWindow?
     private var trayManager: TrayManager?
-    private var sharedModelContainer: ModelContainer?
+    private nonisolated(unsafe) var sharedModelContainer: ModelContainer?
     private var shouldRestoreWindow = false
     private var keyMonitor: Any?
     private let testResponder = KeyboardTestResponder()
@@ -52,14 +53,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     nonisolated func applicationDidFinishLaunching(_ notification: Notification) {
-        DispatchQueue.main.async { [weak self] in
-            self?.setupModelContainer()
-            self?.setupTheme()
-            self?.setupMenu()
-            self?.setupWindow()
-            self?.setupTray()
-            self?.setupKeyboardMonitor()
-            self?.setupGlobalHotkey()
+        Task { @MainActor in
+            self.setupModelContainer()
+            self.setupTheme()
+            self.setupMenu()
+            self.setupWindow()
+            self.setupTray()
+            self.setupKeyboardMonitor()
+            self.setupGlobalHotkey()
         }
     }
     
