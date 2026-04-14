@@ -23,8 +23,7 @@ for app in runningApps {
 let app = NSApplication.shared
 app.setActivationPolicy(.regular)  // 保持 Dock 图标显示
 
-Task { @MainActor in
-    let delegate = AppDelegate()
-    app.delegate = delegate
-    app.run()
-}
+// 在主线程上创建 delegate 并启动应用
+let delegate = MainActor.assumeIsolated { AppDelegate() }
+app.delegate = delegate
+app.run()
