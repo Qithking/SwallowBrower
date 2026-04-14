@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "AppLogo.png",
+      "filename" : "TrayIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -14,9 +14,6 @@
       "scale" : "3x"
     }
   ],
-  "properties" : {
-    "provides-namespace-definition" : true
-  },
   "info" : {
     "author" : "xcode",
     "version" : 1

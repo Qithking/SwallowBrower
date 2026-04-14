@@ -20,7 +20,10 @@ class TrayManager: NSObject {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
         if let button = statusItem?.button {
-            if let iconImage = NSImage(named: NSImage.Name("AppIcon")) {
+            if let trayIcon = NSImage(named: NSImage.Name("TrayIcon")) {
+                // 使用提取的燕子托盘图标
+                button.image = trayIcon
+            } else if let iconImage = NSImage(named: NSImage.Name("AppIcon")) {
                 let smallIcon = NSImage(size: NSSize(width: 18, height: 18))
                 smallIcon.lockFocus()
                 iconImage.draw(in: NSRect(x: 0, y: 0, width: 18, height: 18),
