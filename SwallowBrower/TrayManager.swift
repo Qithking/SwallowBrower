@@ -30,7 +30,7 @@ class TrayManager: NSObject {
                 smallIcon.unlockFocus()
                 button.image = smallIcon
             } else {
-                button.image = NSImage(systemSymbolName: "bird.fill", accessibilityDescription: "BluePage")
+                button.image = NSImage(systemSymbolName: "bird.fill", accessibilityDescription: "SwallowBrower")
             }
             
             // 设置点击事件

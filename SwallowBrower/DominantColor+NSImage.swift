@@ -1,6 +1,6 @@
 //
 //  NSImage+DominantColor.swift
-//  bluePage
+//  SwallowBrower
 //
 //  Created by thking on 2026/4/12.
 //

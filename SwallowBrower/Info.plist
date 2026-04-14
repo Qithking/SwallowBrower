@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>BluePage 需要访问本地网络以发现和连接局域网内的服务。</string>
+	<string>SwallowBrower 需要访问本地网络以发现和连接局域网内的服务。</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
