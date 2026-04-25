@@ -179,6 +179,14 @@ extension AppDelegate {
         window?.styleMask.insert(.fullSizeContentView)
         window?.isMovableByWindowBackground = true
         window?.delegate = self
+        window?.hasShadow = true
+        
+        // 添加圆角边框
+        window?.contentView?.wantsLayer = true
+        window?.contentView?.layer?.cornerRadius = 12
+        window?.contentView?.layer?.masksToBounds = true
+        window?.contentView?.layer?.borderWidth = 1
+        window?.contentView?.layer?.borderColor = NSColor.separatorColor.cgColor
         
         // 根据是否有 ModelContainer 创建对应的视图
         if let container = sharedModelContainer {
